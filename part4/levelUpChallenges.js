@@ -176,5 +176,5 @@ for (const tea of myTeas) {
         break;
     }
     shortTeas.push(tea);
-}
+}  
 console.log(shortTeas);
