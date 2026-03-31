@@ -9,7 +9,7 @@ function makeTea(typeOfTea) {
 let teaOrder = makeTea("Lemon tea");
 console.log(teaOrder);
 /*
-Create a function nameed `orderTea` that takes one parameter, 'teaType`. Inside this funtion,create another function named `confirmOrder` that returns a message like `"Order confirmed for chai"`.
+2.Create a function nameed `orderTea` that takes one parameter, 'teaType`. Inside this funtion,create another function named `confirmOrder` that returns a message like `"Order confirmed for chai"`.
 Call `confirmOrder` from within `orderTea` and return the result.
 */
 
@@ -24,7 +24,7 @@ let orderConfirmation = orderTea();
 console.log(orderConfirmation);
 
 /*
-3.Write an arrow function named `calculateTotal` that takes parameters: `pricd` and `quantity`. The function should return the total cost by multiplying the `price` and `quantity`.
+3.Write an arrow function named `calculateTotal` that takes parameters: `price` and `quantity`. The function should return the total cost by multiplying the `price` and `quantity`.
  Store the result in a variable named `totalCost`.
 */
 
@@ -35,3 +35,39 @@ const calculateTotal = (price ,  quantity) => {
 
 let totalCost = calculateTotal(499, 100);
 console.log(totalCost); 
+
+/*
+4.Write a function named `processTeaOrder` that takes another function, `makeTea` , as a parameter and calls it with the argument `"earl grey"`.
+Return the result of calling `makeTea`.
+*/
+ 
+function makeTea(typeOfTea) { 
+return `maketea: ${typeOfTea}`;
+
+}
+
+function processTeaOrder(teaFunction) {
+    return teaFunction('earl grey')
+}
+
+let order = processTeaOrder(makeTea);
+console.log(order);
+
+/*
+5.Write a function named `createTeaMaker` that returns another function. The returned function should take one paramter, `teaType`, and return a message like `"Making green tea"`.
+Store the returned function in a varible named `teaMaker` and call it with `"green tea".
+*/
+
+function createTeaMaker(name) {
+    let score = 100;
+    return function (teaType) {
+        return `Making ${teaType} ${name} ${score}`;
+    };
+}
+
+let teaMaker = createTeaMaker("Aman");
+// console.log(teaMaker ("green tea"));
+let result = teaMaker(("green tea"));
+
+console.log(result);
+
