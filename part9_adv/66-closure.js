@@ -5,6 +5,5 @@ function outer() {
         return counter;
     }
 }
-
 let increment = outer();
 console.log(increment());
